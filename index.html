@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warung Nasi Ayam Bu Rina</title>
+  <link rel="stylesheet" href="css/output.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 text-white bg-yellow-600 shadow-lg">
+    <div class="flex items-center justify-between max-w-6xl px-4 py-3 mx-auto">
+      <h1 class="text-xl font-bold">Burger Sikeling</h1>
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <ul id="menu-items" class="hidden space-x-6 md:flex">
+        <li><a href="#beranda" class="hover:underline">Beranda</a></li>
+        <li><a href="#menu" class="hover:underline">Menu</a></li>
+        <li><a href="#tentang" class="hover:underline">Tentang</a></li>
+        <li><a href="#galeri" class="hover:underline">Galeri</a></li>
+        <li><a href="#kontak" class="hover:underline">Kontak</a></li>
+      </ul>
+    </div>
+    <!-- Sidebar menu for mobile -->
+    <div id="mobile-menu" class="hidden px-4 py-4 text-white bg-yellow-600 md:hidden">
+      <ul class="space-y-2">
+        <li><a href="#beranda" class="block hover:underline">Beranda</a></li>
+        <li><a href="#menu" class="block hover:underline">Menu</a></li>
+        <li><a href="#tentang" class="block hover:underline">Tentang</a></li>
+        <li><a href="#galeri" class="block hover:underline">Galeri</a></li>
+        <li><a href="#kontak" class="block hover:underline">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>  <!-- Hero Section with Background Image -->  
+  <section id="beranda" class="py-32 text-center text-white bg-center bg-cover" style="background-image: url('https://shopee.co.id/inspirasi-shopee/wp-content/uploads/2021/09/10-Makanan-Khas-Indonesia-yang-Mendunia.webp');">
+    <div class="inline-block w-11/12 lg:w-auto px-4 py-8 bg-black/50 rounded-xl">
+      <h2 class="mb-4 text-3xl md:text-4xl font-bold">Selamat Datang di Warung Nasi Ayam Bu Rina</h2>
+      <p class="text-lg">Nikmat, Terjangkau, dan Bikin Ketagihan!</p>
+    </div>
+  </section>  
+  
+  <!-- Menu Section with Card Style -->  
+  <section id="menu" class="max-w-6xl px-4 py-16 mx-auto bg-white">
+    <h2 class="mb-6 text-2xl font-bold text-center">Menu Kami</h2>
+  
+    <!-- Tombol kategori di tengah -->
+    <div class="flex items-center justify-center gap-3 md:gap-4 mb-6">
+      <button onclick="scrollToSection('best-seller')" class="px-5 md:px-6 flex items-center hover:text-white h-10 text-white bg-red-600 rounded-lg hover:bg-red-700">Best Seller</button>
+      <button onclick="scrollToSection('makanan')" class="px-5 md:px-6 flex items-center hover:text-white box-border h-10 text-yellow-600 border-2 border-yellow-600 rounded-lg hover:bg-yellow-700">Makanan</button>
+      <button onclick="scrollToSection('minuman')" class="px-5 md:px-6 flex items-center hover:text-white box-border h-10 text-yellow-600 border-2 border-yellow-600 rounded-lg hover:bg-yellow-700">Minuman</button>
+    </div>
+  
+    <!-- Daftar Menu -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div id="best-seller" class="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-xl hover:shadow-xl">
+        <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" alt="Nasi Ayam Bakar" class="object-cover w-full h-48">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Nasi Ayam Bakar</h3>
+          <p class="font-bold text-yellow-600">Rp 18.000</p>
+        </div>
+      </div>
+      <div id="makanan" class="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-xl hover:shadow-xl">
+        <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" alt="Nasi Ayam Goreng" class="object-cover w-full h-48">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Nasi Ayam Goreng</h3>
+          <p class="font-bold text-yellow-600">Rp 17.000</p>
+        </div>
+      </div>
+      <div id="minuman" class="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-xl hover:shadow-xl">
+        <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" alt="Es Teh Manis" class="object-cover w-full h-48">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Es Teh Manis</h3>
+          <p class="font-bold text-yellow-600">Rp 5.000</p>
+        </div>
+      </div>
+    </div>
+  </section> 
+  
+  <!-- Tentang Kami -->  
+  <section id="tentang" class="py-16 bg-yellow-50">
+    <div class="max-w-4xl px-4 mx-auto text-center">
+      <h2 class="mb-4 text-2xl font-bold">Tentang Kami</h2>
+      <p>Warung Bu Rina berdiri sejak 2010 dan menyajikan nasi ayam khas rumahan dengan bumbu rahasia turun-temurun. Kami selalu mengutamakan bahan segar dan rasa yang konsisten.</p>
+    </div>
+  </section>  <!-- Galeri -->  <section id="galeri" class="max-w-6xl px-4 py-16 mx-auto bg-white">
+    <h2 class="mb-10 text-2xl font-bold text-center">Galeri</h2>
+    <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
+      <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" class="shadow rounded-xl" alt="Galeri 1">
+      <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" class="shadow rounded-xl" alt="Galeri 2">
+      <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" class="shadow rounded-xl" alt="Galeri 3">
+    </div>
+  </section>  <!-- Kontak -->  <section id="kontak" class="px-4 py-16 text-center bg-yellow-100">
+    <h2 class="mb-4 text-2xl font-bold">Hubungi Kami</h2>
+    <p class="mb-2">Jl. Contoh Alamat No. 123, Kota Contoh</p>
+    <p class="mb-2">Buka setiap hari 09.00 - 21.00</p>
+    <a href="https://wa.me/6281234567890" class="inline-block px-6 py-3 mt-4 text-white bg-green-600 shadow rounded-xl hover:bg-green-700">Pesan via WhatsApp</a>
+    <div class="mt-6">
+      <iframe class="w-full h-64 max-w-2xl mx-auto rounded-xl" src="https://www.google.com/maps/embed?..." allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+  
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
