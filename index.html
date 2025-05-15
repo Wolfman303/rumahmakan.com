@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="id"><head>
+<!DOCTYPE html><html lang="id">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Warung Nasi Ayam Bu Rina</title>
@@ -42,8 +43,10 @@
     document.getElementById('menu-toggle').addEventListener('click', function () {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
-  </script>  <!-- Hero Section with Background Image -->  
-  <section id="beranda" class="py-32 text-center text-white bg-center bg-cover" style="background-image: url('https://shopee.co.id/inspirasi-shopee/wp-content/uploads/2021/09/10-Makanan-Khas-Indonesia-yang-Mendunia.webp');">
+  </script> 
+  
+  <!-- Hero Section with Background Image -->  
+  <section id="beranda" class="py-32 bg-fixed text-center text-white bg-center bg-cover" style="background-image: url('https://shopee.co.id/inspirasi-shopee/wp-content/uploads/2021/09/10-Makanan-Khas-Indonesia-yang-Mendunia.webp');">
     <div class="inline-block w-11/12 lg:w-auto px-4 py-8 bg-black/50 rounded-xl">
       <h2 class="mb-4 text-3xl md:text-4xl font-bold">Selamat Datang di Warung Nasi Ayam Bu Rina</h2>
       <p class="text-lg">Nikmat, Terjangkau, dan Bikin Ketagihan!</p>
@@ -52,55 +55,155 @@
   
   <!-- Menu Section with Card Style -->  
   <section id="menu" class="max-w-6xl px-4 py-16 mx-auto bg-white">
-    <h2 class="mb-6 text-2xl font-bold text-center">Menu Kami</h2>
-  
-    <!-- Tombol kategori di tengah -->
-    <div class="flex items-center justify-center gap-3 md:gap-4 mb-6">
-      <button onclick="scrollToSection('best-seller')" class="px-5 md:px-6 flex items-center hover:text-white h-10 text-white bg-red-600 rounded-lg hover:bg-red-700">Best Seller</button>
-      <button onclick="scrollToSection('makanan')" class="px-5 md:px-6 flex items-center hover:text-white box-border h-10 text-yellow-600 border-2 border-yellow-600 rounded-lg hover:bg-yellow-700">Makanan</button>
-      <button onclick="scrollToSection('minuman')" class="px-5 md:px-6 flex items-center hover:text-white box-border h-10 text-yellow-600 border-2 border-yellow-600 rounded-lg hover:bg-yellow-700">Minuman</button>
-    </div>
-  
-    <!-- Daftar Menu -->
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-      <div id="best-seller" class="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-xl hover:shadow-xl">
-        <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" alt="Nasi Ayam Bakar" class="object-cover w-full h-48">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Nasi Ayam Bakar</h3>
-          <p class="font-bold text-yellow-600">Rp 18.000</p>
-        </div>
-      </div>
-      <div id="makanan" class="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-xl hover:shadow-xl">
-        <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" alt="Nasi Ayam Goreng" class="object-cover w-full h-48">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Nasi Ayam Goreng</h3>
-          <p class="font-bold text-yellow-600">Rp 17.000</p>
-        </div>
-      </div>
-      <div id="minuman" class="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-xl hover:shadow-xl">
-        <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" alt="Es Teh Manis" class="object-cover w-full h-48">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Es Teh Manis</h3>
-          <p class="font-bold text-yellow-600">Rp 5.000</p>
-        </div>
+  <h2 class="mb-6 text-2xl font-bold text-center">Menu Kami</h2>
+
+  <!-- Tombol kategori di tengah -->
+  <div class="flex items-center justify-center text-white gap-2 md:gap-4 mb-6">
+    <button onclick="showCategory('best-seller')" class="px-4 border-2 border-red-600 md:px-6 best-seller flex items-center h-10 bg-red-600 rounded-lg hover:text-white hover:bg-red-700">Best Seller</button>
+    <button onclick="showCategory('makanan')" class="px-4 md:px-6 makanan flex items-center h-10 text-yellow-600 border-2 border-yellow-600 rounded-lg hover:bg-yellow-600 hover:text-white">Makanan</button>
+    <button onclick="showCategory('minuman')" class="px-4 md:px-6 minuman flex items-center h-10 text-yellow-600 border-2 border-yellow-600 rounded-lg hover:bg-yellow-600 hover:text-white">Minuman</button>
+  </div>
+
+  <!-- Daftar Menu -->
+  <div class="grid grid-cols-2 min-h-[640px] gap-6 md:grid-cols-4">
+    <!-- Best Seller -->
+    <div class="menu-item overflow-hidden transition-all duration-1200 scale-5 opacity-0 rounded-xl best-seller makanan shadow-lg">
+      <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" alt="Nasi Ayam Bakar" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Nasi Ayam Bakar</h3>
+        <p class="font-bold text-yellow-600">Rp 18.000</p>
       </div>
     </div>
+    <div class="menu-item overflow-hidden transition-all duration-1200 scale-5 opacity-0 rounded-xl best-seller makanan shadow-lg">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMdVILYOupzfs5nTEnB6lo7R7NRjpAM2suCA&s" alt="Bakso Mie Ayam" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Bakso Mie Ayam</h3>
+        <p class="font-bold text-yellow-600">Rp 15.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all duration-1200 scale-5 opacity-0 rounded-xl best-seller makanan shadow-lg">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtg8zfdNhebIM6Ln3PUJV0fMBMWepDEk_CWg&s" alt="Rendang Daging Sapi" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Rendang Daging Sapi</h3>
+        <p class="font-bold text-yellow-600">Rp 23.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all hidden duration-1200 scale-5 opacity-0 rounded-xl makanan shadow-lg">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk3uvhcYKK6bt-MhSx-uVPj0EXGzQk18ND6Q&s" alt="Nasi Goreng Telur" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Nasi Goreng Telur</h3>
+        <p class="font-bold text-yellow-600">Rp 12.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all hidden duration-1200 scale-5 opacity-0 rounded-xl makanan shadow-lg">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk3uvhcYKK6bt-MhSx-uVPj0EXGzQk18ND6Q&s" alt="Nasi Goreng Telur" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Nasi Goreng Telur</h3>
+        <p class="font-bold text-yellow-600">Rp 12.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all hidden duration-1200 scale-5 opacity-0 rounded-xl makanan shadow-lg">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk3uvhcYKK6bt-MhSx-uVPj0EXGzQk18ND6Q&s" alt="Nasi Goreng Telur" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Nasi Goreng Telur</h3>
+        <p class="font-bold text-yellow-600">Rp 12.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all hidden duration-1200 scale-5 opacity-0 rounded-xl makanan shadow-lg">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk3uvhcYKK6bt-MhSx-uVPj0EXGzQk18ND6Q&s" alt="Nasi Goreng Telur" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Nasi Goreng Telur</h3>
+        <p class="font-bold text-yellow-600">Rp 12.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all hidden duration-1200 scale-5 opacity-0 rounded-xl makanan shadow-lg">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk3uvhcYKK6bt-MhSx-uVPj0EXGzQk18ND6Q&s" alt="Nasi Goreng Telur" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Nasi Goreng Telur</h3>
+        <p class="font-bold text-yellow-600">Rp 12.000</p>
+      </div>
+    </div>
+
+    <!-- Minuman -->
+    <div class="menu-item overflow-hidden transition-all duration-1200 scale-5 opacity-0 best-seller minuman shadow-lg rounded-xl">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6n298gENgs3mvAMLn1O3fvhGaMWQGsCvQQ&s" alt="Aqua" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Aqua</h3>
+        <p class="font-bold text-yellow-600">Rp 3.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all duration-1200 scale-5 opacity-0 best-seller minuman shadow-lg rounded-xl">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6n298gENgs3mvAMLn1O3fvhGaMWQGsCvQQ&s" alt="Teh Manis Dingin / Panas" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Teh Manis Dingin / Panas</h3>
+        <p class="font-bold text-yellow-600">Rp 5.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all duration-1200 scale-5 opacity-0 hidden minuman shadow-lg rounded-xl">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6n298gENgs3mvAMLn1O3fvhGaMWQGsCvQQ&s" alt="Teh Manis Dingin / Panas" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Teh Hijau</h3>
+        <p class="font-bold text-yellow-600">Rp 8.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all duration-1200 scale-5 opacity-0 hidden minuman shadow-lg rounded-xl">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6n298gENgs3mvAMLn1O3fvhGaMWQGsCvQQ&s" alt="Teh Manis Dingin / Panas" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Teh Hijau</h3>
+        <p class="font-bold text-yellow-600">Rp 8.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all duration-1200 scale-5 opacity-0 hidden minuman shadow-lg rounded-xl">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6n298gENgs3mvAMLn1O3fvhGaMWQGsCvQQ&s" alt="Teh Manis Dingin / Panas" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Teh Hijau</h3>
+        <p class="font-bold text-yellow-600">Rp 8.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all duration-1200 scale-5 opacity-0 hidden minuman shadow-lg rounded-xl">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6n298gENgs3mvAMLn1O3fvhGaMWQGsCvQQ&s" alt="Teh Manis Dingin / Panas" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Teh Hijau</h3>
+        <p class="font-bold text-yellow-600">Rp 8.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all duration-1200 scale-5 opacity-0 hidden minuman shadow-lg rounded-xl">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6n298gENgs3mvAMLn1O3fvhGaMWQGsCvQQ&s" alt="Teh Manis Dingin / Panas" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Teh Hijau</h3>
+        <p class="font-bold text-yellow-600">Rp 8.000</p>
+      </div>
+    </div>
+    <div class="menu-item overflow-hidden transition-all duration-1200 scale-5 opacity-0 hidden minuman shadow-lg rounded-xl">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6n298gENgs3mvAMLn1O3fvhGaMWQGsCvQQ&s" alt="Teh Manis Dingin / Panas" class="object-cover w-full h-48">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">Teh Hijau</h3>
+        <p class="font-bold text-yellow-600">Rp 8.000</p>
+      </div>
+    </div>
+  </div>
   </section> 
   
   <!-- Tentang Kami -->  
   <section id="tentang" class="py-16 bg-yellow-50">
-    <div class="max-w-4xl px-4 mx-auto text-center">
+    <div class="max-w-4xl opacity-0 transition-all duration-700 -translate-y-10 px-4 mx-auto text-center">
       <h2 class="mb-4 text-2xl font-bold">Tentang Kami</h2>
       <p>Warung Bu Rina berdiri sejak 2010 dan menyajikan nasi ayam khas rumahan dengan bumbu rahasia turun-temurun. Kami selalu mengutamakan bahan segar dan rasa yang konsisten.</p>
     </div>
-  </section>  <!-- Galeri -->  <section id="galeri" class="max-w-6xl px-4 py-16 mx-auto bg-white">
+  </section>  
+  
+<!-- Galeri --> 
+ <section id="galeri" class="max-w-6xl px-4 py-16 mx-auto bg-white">
     <h2 class="mb-10 text-2xl font-bold text-center">Galeri</h2>
     <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
       <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" class="shadow rounded-xl" alt="Galeri 1">
       <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" class="shadow rounded-xl" alt="Galeri 2">
       <img src="https://www.sasa.co.id/medias/page_medias/nasi_ayam_bakar.jpg" class="shadow rounded-xl" alt="Galeri 3">
     </div>
-  </section>  <!-- Kontak -->  <section id="kontak" class="px-4 py-16 text-center bg-yellow-100">
+  </section> 
+  
+  <!-- Kontak -->
+  <section id="kontak" class="px-4 py-16 text-center bg-yellow-100">
     <h2 class="mb-4 text-2xl font-bold">Hubungi Kami</h2>
     <p class="mb-2">Jl. Contoh Alamat No. 123, Kota Contoh</p>
     <p class="mb-2">Buka setiap hari 09.00 - 21.00</p>
@@ -110,10 +213,7 @@
     </div>
   </section>
   
-  <script>
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
-  </script>
+  <script src="js/jquery.js"></script>
+  <script src="js/jq.js"></script>
 </body>
 </html>
