@@ -14,7 +14,7 @@ function showCategory(category) {
     selectedItems.each(function(i) {
         setTimeout(() => { 
             selectedItems.eq(i).removeClass("scale-5 opacity-0");
-        }, 400 * (i+1));
+        }, 150 * (i+1));
     });
 
     let buttonOnclick = $("button[onclick]");
@@ -41,7 +41,7 @@ $(window).scroll(function() {
         $('#menu div .best-seller').each(function(i) {
             setTimeout(function() {
                 $('#menu div .best-seller').eq(i).removeClass('scale-5 opacity-0');
-            }, 500 * (i+1));
+            }, 150 * (i+1));
         });
     }
 
@@ -51,3 +51,15 @@ $(window).scroll(function() {
         $('#tentang div').removeClass('-translate-y-10');
     }
 });
+
+$(document).ready(function() {
+    $("button").on("click", function() {
+      var button = $(this);
+
+      button.prop("disabled", true).css("opacity", "0.5"); // Nonaktifkan tombol
+
+      setTimeout(function() {
+        button.prop("disabled", false).css("opacity", "1"); // Aktifkan tombol kembali
+      }, 2000);
+    });
+  });
