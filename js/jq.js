@@ -14,7 +14,7 @@ function showCategory(category) {
     selectedItems.each(function(i) {
         setTimeout(() => { 
             selectedItems.eq(i).removeClass("scale-5 opacity-0");
-        }, 200 * (i+1));
+        }, 400 * (i+1));
     });
 
     let buttonOnclick = $("button[onclick]");
