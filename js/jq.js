@@ -56,10 +56,10 @@ $(document).ready(function() {
     $("button").on("click", function() {
       var button = $(this);
 
-      button.prop("disabled", true).css("opacity", "0.5"); // Nonaktifkan tombol
+      button.prop("disabled", true); // Nonaktifkan tombol
 
       setTimeout(function() {
-        button.prop("disabled", false).css("opacity", "1"); // Aktifkan tombol kembali
+        button.prop("disabled", false); // Aktifkan tombol kembali
       }, 2000);
     });
   });
